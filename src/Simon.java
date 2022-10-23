@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import javafx.application.Application;
 	import javafx.fxml.FXMLLoader;
 	import javafx.scene.Parent;
@@ -8,7 +9,7 @@ import javafx.application.Application;
 	   @Override
 	   public void start(Stage stage) throws Exception {
 	      Parent root = 
-	         FXMLLoader.load(getClass().getResource("Simon.fxml"));
+	         FXMLLoader.load(getClass().getResource("SimonGUI.fxml"));
 
 	      Scene scene = new Scene(root); // attach scene graph to scene
 	      stage.setTitle("Simon"); // displayed in window's title bar
@@ -19,4 +20,18 @@ import javafx.application.Application;
 	   public static void main(String[] args) {
 	      launch(args);	// call start method
 	   }
+	   
+	   private ArrayList<String> colorSequence;
+	   
+	   public Simon() {	// create Simon object
+		   
+	   }
+
+	   public void setSequence(ArrayList<String> colorSequence) {
+		   this.colorSequence = colorSequence;
+	   }
+	   
+	   public ArrayList<String> getSequence() {
+		return colorSequence;
+	}
 	}
