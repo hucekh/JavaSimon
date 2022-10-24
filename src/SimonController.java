@@ -55,10 +55,18 @@ public class SimonController {
     }
 
     @FXML
-    private void userAction(MouseEvent event) {
+    private void userAction(MouseEvent event) {	// checks if colors clicked match the sequence of colors
     	if () {
     		
     	}
+    }
+    
+    private void gameOver() {	// alerts user that game is over
+    	
+    }
+    
+    public void displaySequence() {	// displays sequence of colors as flashes of white
+    	
     }
 
 }
