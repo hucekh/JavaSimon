@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.lang.Math;
 import javafx.application.Application;
 	import javafx.fxml.FXMLLoader;
 	import javafx.scene.Parent;
@@ -22,41 +23,66 @@ import javafx.application.Application;
 	   }
 	   
 	   private ArrayList<String> colorSequence;
+	   private boolean gameOn; 
+	   private int currentIndex;
+	   private final int turns = 3;
+	   private final String[] colors = {"g", "r", "y", "b", "p", "o"};
 	   
 	   public Simon() {	// constructor to create Simon object, creates arraylist for sequence
-		   
+		   currentIndex = 0;
+		   colorSequence = new ArrayList<String>();
+		   setGameOn(false); 
 	   }
 	   
 	   public void start() {	// starts game
-		   
+		   colorSequence.clear();
+		   generateSequence();
+		   setGameOn(true);
+		   currentIndex = 0;
 	   }
 	   
 	   public void generateSequence() {	// generates random sequence of colors by adding random colors to arraylist
-		   
+		   for(int i = 0; i < turns; i++){
+			   colorSequence.add(randomColor()); 
+		   }
 	   }
 	   
-	   public boolean checkInput() {	// checks if user selected the correct color
-		   
+	   public boolean checkInput(String color) {	// checks if user selected the correct color
+		   if((colorSequence.get(currentIndex)).equals(color)){
+			   if(currentIndex == (colorSequence.size()-1)){
+				   addColor();
+				   currentIndex = 0;
+				   return true;
+			   }
+			   currentIndex++;
+			   return true; 
+		   }
+		   else {
+			   endGame();
+			   return false; 
+			}
 	   }
 	   
 	   public void endGame() {	// ends game
-		   
+		   currentIndex = 0;
+		   colorSequence.clear();
+		   setGameOn(false); 
 	   }
 	   
-	   public void addColorToSequence() {	// ads random color to sequence
-		   
+	   public void addColor() {	// adds random color to sequence
+		   colorSequence.add(randomColor());
 	   }
 	   
-	   public void randomColor() {	// returns random color
-		   
+	   private String randomColor() {	// returns random color
+		   return colors[(int) (Math.random()*4)];
 	   }
 	   
 	   public int getIndex() {	// returns the current index
-		   
+		   return currentIndex;
 	   }
 	   
 	   public void setIndex() {	// setter method for current index
-		   
+		   this.currentIndex = currentIndex;
 	   }
 	   
 	   public ArrayList<String> getSequence() {	// getter method for arraylist
@@ -67,11 +93,11 @@ import javafx.application.Application;
 		   this.colorSequence = colorSequence;
 	   }
 	   
-	   public isGameOn() {	// returns value of gameOn
-		   
+	   public boolean isGameOn() {	// returns value of gameOn
+		   return gameOn;
 	   }
 	   
-	   public void setGameOn() {	// sets gameOn variable to boolean value
-		   
+	   public void setGameOn(boolean gameOn) {	// sets gameOn variable to boolean value
+		   this.gameOn = gameOn;
 	   }
 	}
