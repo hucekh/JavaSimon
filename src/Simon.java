@@ -25,7 +25,7 @@ import javafx.application.Application;
 	   private ArrayList<String> colorSequence;
 	   private boolean gameOn; 
 	   private int currentIndex;
-	   private final int turns = 3;
+	   private final int turns = 1;
 	   private final String[] colors = {"g", "r", "y", "b", "p", "o"};
 	   
 	   public Simon() {	// constructor to create Simon object, creates arraylist for sequence
@@ -74,7 +74,7 @@ import javafx.application.Application;
 	   }
 	   
 	   private String randomColor() {	// returns random color
-		   return colors[(int) (Math.random()*4)];
+		   return colors[(int) (Math.random()*6)];
 	   }
 	   
 	   public int getIndex() {	// returns the current index
