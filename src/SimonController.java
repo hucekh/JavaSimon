@@ -170,8 +170,7 @@ public class SimonController implements Initializable{
     				st.getChildren().add(orangeft);
     				break;
     		}
-		//set the current round
-		currentRound.setText(i+"");
+    		currentRound.setText(i + 1 + "");	// set the current round
     	}
     	st.play();
     }
