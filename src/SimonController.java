@@ -1,4 +1,7 @@
 import javafx.fxml.FXML;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -11,7 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import java.util.ArrayList;
 
-public class SimonController {
+public class SimonController implements Initializable{
 	private Simon simon = new Simon();	// create new Simon object
 	private ArrayList<String> colorSequence = simon.getSequence();
 	
@@ -58,7 +61,7 @@ public class SimonController {
     }
 
     @FXML
-    private void userInput(MouseEvent event) {	// checks if colors clicked match the sequence of colors
+    private void userAction(MouseEvent event) {	// checks if colors clicked match the sequence of colors
     	if (simon.isGameOn()) {
     		if(event.getSource()==greenButton){
     			if(!simon.checkInput("g")){
@@ -85,12 +88,12 @@ public class SimonController {
     				gameOver();
     			}
     		}
-    		if(event.getSource()==orangeButton){
+    		if(event.getSource()== orangeButton){
     			if(!simon.checkInput("o")){
     				gameOver();
     			}
     		}
-    		if(event.getIndex() == 0){
+    		if(simon.getIndex() == 0){
     			displaySequence(simon.getSequence());
     		}
     	}
@@ -171,4 +174,7 @@ public class SimonController {
     	st.play();
     }
 
+    @Override
+	public void initialize(URL location, ResourceBundle resources) {	// initializes FXML attributes
+	}
 }
