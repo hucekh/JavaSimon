@@ -1,3 +1,9 @@
+/**
+ * Class Name: SimonController
+ * Class Description: This class handles all actions from GUI, linking them with Simon class.
+ * @author Hope H, Sam W, Declan R
+ */
+
 import javafx.fxml.FXML;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import java.util.ArrayList;
 
-public class SimonController implements Initializable{
+public class SimonController implements Initializable {
 	private Simon simon = new Simon();	// create new Simon object
 	private ArrayList<String> colorSequence = simon.getSequence();
 	
@@ -61,7 +67,7 @@ public class SimonController implements Initializable{
     }
 
     @FXML
-    private void userAction(MouseEvent event) {	// checks if colors clicked match the sequence of colors
+    private void userAction(MouseEvent event) {	// checks if colors clicked match the sequence of colors generated
     	if (simon.isGameOn()) {
     		if (event.getSource() == greenButton){
     			if (!simon.checkInput("g")){
@@ -115,7 +121,7 @@ public class SimonController implements Initializable{
 		alert.show();	
     }
     
-    public void displaySequence(ArrayList<String> colorSequence) {	// displays sequence of colors as flashes of white
+    public void displaySequence(ArrayList<String> colorSequence) {	// displays sequence of colors as flashes
     	SequentialTransition st = new SequentialTransition();
     	st.setCycleCount(1);
     	st.setAutoReverse(false);
@@ -170,7 +176,7 @@ public class SimonController implements Initializable{
     				st.getChildren().add(orangeft);
     				break;
     		}
-    		currentRound.setText(i + 1 + "");	// set the current round
+    		currentRound.setText(i + 1 + "");	// sets and displays the current round
     	}
     	st.play();
     }
