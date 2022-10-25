@@ -1,3 +1,10 @@
+/**
+ * Class Name: Simon
+ * Class Description: This class generates a color sequence and compares it with sequence the user
+ * inputs to check if correct. Keeps track of the amount of turns and ends game if sequence is incorrect.
+ * @author Hope H, Sam W, Declan R
+ */
+
 import java.util.ArrayList;
 import java.lang.Math;
 import javafx.application.Application;
@@ -19,7 +26,7 @@ import javafx.stage.Stage;
 	   }
 
 	   public static void main(String[] args) {
-	      launch(args);	// call start method
+	      launch(args);	// calls start method
 	   }
 	   
 	   private ArrayList<String> colorSequence;
@@ -34,21 +41,21 @@ import javafx.stage.Stage;
 		   setGameOn(false); 
 	   }
 	   
-	   public void start() {	// starts game
+	   public void start() {	// starts game by generating sequence of random colors
 		   colorSequence.clear();
 		   generateSequence();
 		   setGameOn(true);
 		   currentIndex = 0;
 	   }
 	   
-	   public void generateSequence() {	// generates random sequence of colors by adding random colors to arraylist
-		   for(int i = 0; i < turns; i++){
+	   public void generateSequence() {		// generates sequence of colors by adding random colors to arraylist
+		   for(int i = 0; i < turns; i++){	//
 			   colorSequence.add(randomColor()); 
 		   }
 	   }
 	   
 	   public boolean checkInput(String color) {	// checks if user selected the correct color
-		   if((colorSequence.get(currentIndex)).equals(color)){
+		   if((colorSequence.get(currentIndex)).equals(color)){	
 			   if(currentIndex == (colorSequence.size()-1)){
 				   addColor();
 				   currentIndex = 0;
@@ -89,7 +96,7 @@ import javafx.stage.Stage;
 		return colorSequence;
 	   }
 	   
-	   public void setSequence(ArrayList<String> colorSequence) {	// sets sequence to an array of colors
+	   public void setSequence(ArrayList<String> colorSequence) {	// sets sequence to array of colors
 		   this.colorSequence = colorSequence;
 	   }
 	   
