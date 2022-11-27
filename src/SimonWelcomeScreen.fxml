@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SimonController">
+   <children>
+      <Label alignment="CENTER" layoutX="74.0" layoutY="24.0" prefHeight="70.0" prefWidth="453.0" text="Welcome to Java Simon!">
+         <font>
+            <Font name="Futura Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="172.0" layoutY="274.0" text="Select a difficulty to begin">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="172.0" layoutY="316.0" mnemonicParsing="false" onAction="#switchToMainScreen" prefHeight="38.0" prefWidth="88.0" text="Normal" />
+      <Button layoutX="341.0" layoutY="316.0" mnemonicParsing="false" onAction="#switchToMainScreen" prefHeight="38.0" prefWidth="88.0" text="Hard" />
+      <ImageView fitHeight="155.0" fitWidth="155.0" layoutX="223.0" layoutY="101.0">
+         <image>
+            <Image url="@2732180.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
