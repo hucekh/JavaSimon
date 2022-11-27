@@ -5,24 +5,37 @@
  */
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Arc;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.animation.FadeTransition;
 import javafx.animation.SequentialTransition;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import java.util.ArrayList;
+import javafx.scene.Node;
+
 
 public class SimonController implements Initializable {
 	private Simon simon = new Simon();	// create new Simon object
 	private ArrayList<String> colorSequence = simon.getSequence();
+	
+	 private Stage stage;
+	 private Scene scene;
+	 private Parent root;
+
 	
     @FXML
     private Arc yellowButton;
@@ -50,6 +63,15 @@ public class SimonController implements Initializable {
 
     @FXML
     private Button instructionsButton;
+    
+    public void switchToMainScreen(ActionEvent event) throws IOException {
+    	  Parent root = FXMLLoader.load(getClass().getResource("SimonGUI.fxml"));
+    	  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    	  scene = new Scene(root);
+    	  stage.setScene(scene);
+    	  stage.show();
+    	 }
+
 
     @FXML
     private void buttonAction(ActionEvent event) {	// actions for "instructions" and "start" buttons
