@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 	   @Override
 	   public void start(Stage stage) throws Exception {
 	      Parent root = 
-	         FXMLLoader.load(getClass().getResource("SimonGUI.fxml"));
+	         FXMLLoader.load(getClass().getResource("SimonWelcomeScreen.fxml"));
 
 	      Scene scene = new Scene(root); // attach scene graph to scene
 	      stage.setTitle("Simon"); // displayed in window's title bar
