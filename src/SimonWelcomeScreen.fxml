@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SimonController">
+   <children>
+      <Label alignment="CENTER" layoutX="-15.0" layoutY="33.0" prefHeight="70.0" prefWidth="453.0" text="Java Simon" textFill="RED">
+         <font>
+            <Font name="Futura Bold" size="32.0" />
+         </font>
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect>
+      </Label>
+      <Button fx:id="DifficultyLockButton" layoutX="69.0" layoutY="216.0" mnemonicParsing="false" onAction="#difficultySelector" onMouseClicked="#difficultySelector" prefHeight="49.0" prefWidth="286.0" text="Set Difficulty" />
+      <ImageView fitHeight="190.0" fitWidth="194.0" layoutX="400.0" layoutY="8.0">
+         <image>
+            <Image url="@2732180.png" />
+         </image>
+      </ImageView>
+      <Slider fx:id="difficultySlider" layoutX="23.0" layoutY="186.0" max="500.0" min="20.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="14.0" prefWidth="377.0" showTickMarks="true" value="400.0" />
+      <Label layoutX="23.0" layoutY="169.0" text="Easy" textFill="#fff600">
+         <effect>
+            <DropShadow spread="0.61" />
+         </effect>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="169.0" text="Normal" textFill="#01fc01">
+         <effect>
+            <DropShadow spread="0.56" />
+         </effect>
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="256.0" layoutY="169.0" text="Hard" textFill="#7cc7f8">
+         <effect>
+            <DropShadow spread="0.57" />
+         </effect>
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="358.0" layoutY="169.0" text="Impossible" textFill="#ff0b0b">
+         <effect>
+            <DropShadow spread="0.46" />
+         </effect>
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="startMenuButton" disable="true" layoutX="192.0" layoutY="281.0" mnemonicParsing="false" onAction="#switchToMainScreen" opacity="0.0" prefHeight="98.0" prefWidth="217.0" text="Start!">
+         <font>
+            <Font name="Arial Bold" size="28.0" />
+         </font>
+      </Button>
+      <Label layoutX="107.0" layoutY="141.0" text="Slide to your preffered difficulty">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Line endX="152.5" endY="191.0" layoutX="1.0" layoutY="9.0" startX="152.5" startY="178.0" />
+      <Line endX="152.5" endY="191.0" layoutX="117.0" layoutY="9.0" startX="152.5" startY="178.0" />
+   </children>
+</Pane>
