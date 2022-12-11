@@ -34,11 +34,14 @@ import javafx.stage.Stage;
 	   private int currentIndex;
 	   private final int turns = 1;
 	   private final String[] colors = {"g", "r", "y", "b", "p", "o"};
+	   public int difficulty;
+	   public int highScore = 0;
 	   
 	   public Simon() {	// constructor to create Simon object, creates arraylist for sequence
 		   currentIndex = 0;
 		   colorSequence = new ArrayList<String>();
 		   setGameOn(false); 
+		   
 	   }
 	   
 	   public void start() {	// starts game by generating sequence of random colors
@@ -46,6 +49,7 @@ import javafx.stage.Stage;
 		   generateSequence();
 		   setGameOn(true);
 		   currentIndex = 0;
+		   
 	   }
 	   
 	   public void generateSequence() {		// generates sequence of colors by adding random colors to arraylist
@@ -107,4 +111,19 @@ import javafx.stage.Stage;
 	   public void setGameOn(boolean gameOn) {	// sets gameOn variable to boolean value
 		   this.gameOn = gameOn;
 	   }
+	   
+	   public int getHighScore() {
+		   return highScore;
+	   }
+	   
+	   public void setHighScore(int highScore) {
+		   this.highScore= highScore;
+	   }
+//	   public final int getDifficulty() {
+//		   return difficulty;
+//	   }
+//	   public void setDifficulty(int difficulty) {
+//		   System.out.print(difficulty);
+//		   this.difficulty= difficulty;
+//	   }
 	}
