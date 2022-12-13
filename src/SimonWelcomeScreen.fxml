@@ -3,74 +3,70 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
-<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SimonController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SimonController">
    <children>
-      <Label alignment="CENTER" layoutX="-15.0" layoutY="33.0" prefHeight="70.0" prefWidth="453.0" text="Java Simon" textFill="RED">
+      <Label alignment="CENTER" layoutX="-22.0" layoutY="58.0" prefHeight="70.0" prefWidth="453.0" text="Java Simon" textFill="#e83535">
          <font>
             <Font name="Futura Bold" size="32.0" />
          </font>
          <effect>
-            <Bloom threshold="0.0" />
+            <DropShadow color="#fc4b4b" />
          </effect>
       </Label>
-      <Button fx:id="DifficultyLockButton" layoutX="69.0" layoutY="216.0" mnemonicParsing="false" onAction="#difficultySelector" onMouseClicked="#difficultySelector" prefHeight="49.0" prefWidth="286.0" text="Set Difficulty" />
-      <ImageView fitHeight="190.0" fitWidth="194.0" layoutX="400.0" layoutY="8.0">
+      <Button fx:id="DifficultyLockButton" layoutX="114.0" layoutY="316.0" mnemonicParsing="false" onAction="#difficultySelector" onMouseClicked="#difficultySelector" prefHeight="39.0" prefWidth="181.0" text="Set Difficulty" />
+      <ImageView fitHeight="190.0" fitWidth="194.0" layoutX="363.0" layoutY="33.0">
          <image>
             <Image url="@2732180.png" />
          </image>
       </ImageView>
-      <Slider fx:id="difficultySlider" layoutX="23.0" layoutY="186.0" max="500.0" min="20.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="14.0" prefWidth="377.0" showTickMarks="true" value="400.0" />
-      <Label layoutX="23.0" layoutY="169.0" text="Easy" textFill="#fff600">
+      <Slider fx:id="difficultySlider" layoutX="23.0" layoutY="268.0" majorTickUnit="160.0" max="500.0" min="20.0" minorTickCount="0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="14.0" prefWidth="377.0" showTickMarks="true" snapToTicks="true" value="340.0" />
+      <Label layoutX="23.0" layoutY="247.0" prefHeight="16.0" prefWidth="41.0" text="Easy" textFill="#cda000">
          <effect>
-            <DropShadow spread="0.61" />
+            <DropShadow color="#fff170" spread="0.61" />
          </effect>
          <font>
-            <Font name="Arial" size="12.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="133.0" layoutY="169.0" text="Normal" textFill="#01fc01">
+      <Label layoutX="127.0" layoutY="247.0" text="Normal" textFill="#60b260">
          <effect>
-            <DropShadow spread="0.56" />
+            <DropShadow color="#74ff64" spread="0.56" />
          </effect>
          <font>
-            <Font name="Arial Bold" size="12.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="256.0" layoutY="169.0" text="Hard" textFill="#7cc7f8">
+      <Label layoutX="256.0" layoutY="247.0" text="Hard" textFill="#429ad0">
          <effect>
-            <DropShadow spread="0.57" />
+            <DropShadow color="#7dc5ff" spread="0.57" />
          </effect>
          <font>
-            <Font name="Arial Bold" size="12.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="358.0" layoutY="169.0" text="Impossible" textFill="#ff0b0b">
+      <Label layoutX="358.0" layoutY="247.0" text="Impossible" textFill="#e83535">
          <effect>
-            <DropShadow spread="0.46" />
+            <DropShadow color="#ff32328c" spread="0.46" />
          </effect>
          <font>
-            <Font name="Arial Bold" size="12.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="startMenuButton" disable="true" layoutX="192.0" layoutY="281.0" mnemonicParsing="false" onAction="#switchToMainScreen" opacity="0.0" prefHeight="98.0" prefWidth="217.0" text="Start!">
+      <Button fx:id="startMenuButton" disable="true" layoutX="358.0" layoutY="294.0" mnemonicParsing="false" onAction="#switchToMainScreen" opacity="0.0" prefHeight="84.0" prefWidth="205.0" text="Start!">
          <font>
             <Font name="Arial Bold" size="28.0" />
          </font>
       </Button>
-      <Label layoutX="107.0" layoutY="141.0" text="Slide to your preffered difficulty">
+      <Label layoutX="107.0" layoutY="200.0" text="Slide to your preffered difficulty">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Line endX="152.5" endY="191.0" layoutX="1.0" layoutY="9.0" startX="152.5" startY="178.0" />
-      <Line endX="152.5" endY="191.0" layoutX="117.0" layoutY="9.0" startX="152.5" startY="178.0" />
    </children>
 </Pane>
